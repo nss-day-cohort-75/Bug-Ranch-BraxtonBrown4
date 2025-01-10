@@ -76,11 +76,14 @@ Your journey will take you through the wildness of the American Midwest and acro
 ```
 
 1. In the **main** module, one of the first lines of code is `const drovers = hireDrovers(cattleToDrive)`. Explain what the value of the `drovers` variable is when that line of code runs.
-   > Your answer here
+   > Your answer here //drovers is saving the returned array of drover names from the hireDrovers function()
+
 2. At the bottom of the main module, you will see the following code - `for (const drover of drovers)`. Explain what the values of both the `drover` and the `drovers` variables are.
-   > Your answer here
+   > Your answer here //dovers is the representing the object in the array of drovers as the for of loop cycles
+
 3. In the **journey** module, there is a `journeyMaker()` function. In that function, there is a variable named `areas` which will have the value of an object. Use your debugger to show what the value of each key is on that object. Use [Loom](https://www.loom.com) to record your session.
-   > Your public Loom URL here
+   > Your public Loom URL here https://www.loom.com/share/fa83a080d42841dd811cba16aba2c2d4
+
 4. Also in the **journey** module, there is the following code:
    ```js
    for (let forestNumber = 0; forestNumber < areas.forests; forestNumber++) {
@@ -88,11 +91,16 @@ Your journey will take you through the wildness of the American Midwest and acro
    }
    ```
    Explain this code with your best vocabulary.
-   > Your answer here
+   > Your answer here //This for loop is iterating through the random number of forests in the returned createForests() function, that is housed in the areas array, and for each iteration it is adding it to the end of the journey array
+
 5. Explain the value of the `database` variable in the **database** module. Be as comprehensive as possible.
-   > Your answer here
+   > Your answer here // database is a array of two arrays drovers and cattleTypes, each contain objects. 
+   Drovers is a array of objects that contain information on different types of drovers, their id, gender, first, and last name.
+   CattleTypes is a array of objects that contain information on different types of cattle, their id and breed.
+   The database is used as a housing to allow all of its information to be exported, imported, and used where needed.
+
 6. In the **drovers** module, there is a `hireDrovers()` function. You will notice the following code on that line - `(herdSize)`. What is that defining, and where does it get its value?
-   > Your answer here
+   > Your answer here // herdSize serves as a empty argument for the function so that when the function is used you may input the necessary data, it makes the function re-usable instead of having a hardcoded number.
 
 ## When You Are Done
 

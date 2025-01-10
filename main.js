@@ -1,3 +1,4 @@
+const { database } = require("./database.js")
 const { roundup } = require("./cattle.js")
 const { hireDrovers } = require("./drovers.js")
 const { journeyMaker } = require("./journey.js")
@@ -25,14 +26,33 @@ console.log(`
 
 console.log(`You will be accompanying ${drovers.length} drovers as they drive ${cattleToDrive} cattle to Old Red's Ranch for grazing`)
 console.log(`\nThe herd is made of up the following cattle (only their breed is shown):`)
-console.log(`${cattle}\n`)
+let cowList = ''
+let num = 0
+for (let i = 0; i < cattle.length; i++) {
+    cowList += `${cattle[i].breed},`
 
-console.log("Here is the team of drovers you will be joining")
+    if (i == cattle.length - 1) {
+        console.log(cowList.slice(0, -1))
+    }
+
+    else if (num == 5) {
+        console.log(cowList)
+        cowList = ''
+        num = 0
+    }
+    num++
+}
+
+console.log("\n Here is the team of drovers you will be joining")
+let herderNames = ''
 for (const drover of drovers) {
-    console.log(`\t* ${drover.first_name} ${drover.last_name}`)
+    herderNames += `\t* ${drover.first_name} ${drover.last_name}\n`
 }
+console.log(herderNames)
 
-console.log("\n\nYour journey will take you through the wildness of the American Midwest and across the following terrain")
+console.log("Your journey will take you through the wildness of the American Midwest and across the following terrain")
+let terrain = ''
 for (const area of journey) {
-    console.log(`\t* ${area}`)
+    terrain += `\t* ${area} \n`
 }
+console.log(terrain)
